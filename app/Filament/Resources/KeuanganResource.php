@@ -11,6 +11,7 @@ use App\Models\TipePemasukan;
 use App\Models\TipePengeluaran;
 use Filament\Resources\Resource;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Date;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Actions\EditAction;
@@ -46,7 +47,9 @@ class KeuanganResource extends Resource
     {
         return $form
             ->schema([
-            DatePicker::make('tanggal')->required(),
+            DatePicker::make('tanggal')
+                ->required()
+                ->default(Date::now()),
             TextInput::make('deskripsi')->required(),
             TextInput::make('jumlah')
                 ->numeric()
@@ -112,7 +115,8 @@ class KeuanganResource extends Resource
                     ->options([
                         'pemasukan' => 'Pemasukan',
                         'pengeluaran' => 'Pengeluaran',
-                    ])
+                    ]),
+                TrashedFilter::make()
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),

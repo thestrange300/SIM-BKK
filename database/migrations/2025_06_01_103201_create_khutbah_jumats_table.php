@@ -17,9 +17,9 @@ return new class extends Migration
             $table->string('judul')->nullable();
             $table->text('catatan')->nullable();            
             $table->foreignId('imam_id');
-            $table->foreign('id')->references('id')->on('petugas_keagamaan')->onDelete('cascade');
+            $table->foreign('imam_id')->references('id')->on('petugas_keagamaan')->onDelete('cascade');
             $table->foreignId('khotib_id');
-            $table->foreign('id')->references('id')->on('petugas_keagamaan')->onDelete('cascade');
+            $table->foreign('khotib_id')->references('id')->on('petugas_keagamaan')->onDelete('cascade');
             $table->timestamps();
         });
     }

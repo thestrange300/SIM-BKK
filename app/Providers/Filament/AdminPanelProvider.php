@@ -27,6 +27,9 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
+            // ->brandLogo(asset('logo.svg'))
+            // ->darkModeBrandLogo(asset('logodark.svg'))
+            // ->brandLogoHeight('3rem')
             ->colors([
                 'primary' => Color::Emerald,
             ])
@@ -54,5 +57,6 @@ class AdminPanelProvider extends PanelProvider
             ->authMiddleware([
                 Authenticate::class,
             ]);
+            
     }
 }

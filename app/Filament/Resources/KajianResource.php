@@ -2,23 +2,24 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\KajianResource\Pages;
-use App\Filament\Resources\KajianResource\RelationManagers;
-use App\Models\Kajian;
 use Dom\Text;
 use Filament\Forms;
-use Filament\Forms\Components\DatePicker;
+use Filament\Tables;
+use App\Models\Kajian;
+use Filament\Forms\Form;
+use Filament\Tables\Table;
+use Illuminate\Support\Carbon;
+use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Components\TimePicker;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
-use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\TimePicker;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\KajianResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\KajianResource\RelationManagers;
 
 class KajianResource extends Resource
 {
@@ -72,8 +73,10 @@ class KajianResource extends Resource
             ->columns([
                 TextColumn::make('tanggal')
                     ->label('Tanggal Kajian')
-                    ->date()
-                    ->sortable(),
+                    ->date('d M, Y')
+                    ->sortable()
+                    ->color(fn ($record) => Carbon::parse($record->tanggal)->isFuture() ? 'success' : null)
+                    ->weight(fn ($record) => Carbon::parse($record->tanggal)->isFuture() ? 'bold' : null),                    
                 TextColumn::make('waktu_mulai')
                     ->label('Waktu Mulai')
                     ->time()
@@ -97,7 +100,7 @@ class KajianResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])->defaultSort('tanggal', 'desc');
     }
 
     public static function getRelations(): array

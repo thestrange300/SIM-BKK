@@ -2,21 +2,22 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\KhutbahJumatResource\Pages;
-use App\Filament\Resources\KhutbahJumatResource\RelationManagers;
-use App\Models\KhutbahJumat;
 use Filament\Forms;
-use Filament\Forms\Components\DatePicker;
+use Filament\Tables;
+use Filament\Forms\Form;
+use Filament\Tables\Table;
+use App\Models\KhutbahJumat;
+use Illuminate\Support\Carbon;
+use Filament\Resources\Resource;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
-use Filament\Forms\Components\TextInput;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
-use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
-use Filament\Tables\Table;
+use Filament\Forms\Components\TextInput;
+use Filament\Forms\Components\DatePicker;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\KhutbahJumatResource\Pages;
+use App\Filament\Resources\KhutbahJumatResource\RelationManagers;
 
 class KhutbahJumatResource extends Resource
 {
@@ -66,7 +67,8 @@ class KhutbahJumatResource extends Resource
                     ->label('Tanggal Khutbah')
                     ->date('d M, Y')
                     ->sortable()
-                    ->searchable(),
+                    ->color(fn ($record) => Carbon::parse($record->tanggal)->isFuture() ? 'success' : null)
+                    ->weight(fn ($record) => Carbon::parse($record->tanggal)->isFuture() ? 'bold' : null),
                 TextColumn::make('khotib.nama')
                     ->label('Khotib')
                     ->sortable()
@@ -96,7 +98,7 @@ class KhutbahJumatResource extends Resource
                 Tables\Actions\BulkActionGroup::make([
                     Tables\Actions\DeleteBulkAction::make(),
                 ]),
-            ]);
+            ])->defaultSort('tanggal', 'desc');
     }
 
     public static function getRelations(): array

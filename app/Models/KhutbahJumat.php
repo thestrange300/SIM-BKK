@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\PetugasKeagamaan;
 use Illuminate\Database\Eloquent\Model;
 
 class KhutbahJumat extends Model
