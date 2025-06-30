@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tipe_pemasukan', function (Blueprint $table) {
+        Schema::create('data_hewan', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
+            $table->string('id_hewan')->unique();
+            $table->enum('jenis_hewan', ['Kambing', 'Sapi', 'Domba', 'Kerbau', 'Lainnya']);
+            $table->decimal('berat', 8, 2)->nullable();
+            $table->date('tanggal')->nullable();
             $table->text('deskripsi')->nullable();
             $table->timestamps();
         });
@@ -24,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tipe_pemasukans');
+        Schema::dropIfExists('data_hewans');
     }
 };

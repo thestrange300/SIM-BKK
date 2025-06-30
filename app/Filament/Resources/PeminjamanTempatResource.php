@@ -25,8 +25,8 @@ class PeminjamanTempatResource extends Resource
 {
     protected static ?string $model = PeminjamanTempat::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Manajemen Acara';
+    protected static ?string $navigationIcon = 'heroicon-o-building-office';
+    protected static ?string $navigationGroup = 'Manajemen Masjid';
     protected static ?string $navigationLabel = 'Peminjaman Tempat';
     protected static ?string $slug = 'peminjaman-tempat';
     protected static ?string $modelLabel = 'Peminjaman Tempat';

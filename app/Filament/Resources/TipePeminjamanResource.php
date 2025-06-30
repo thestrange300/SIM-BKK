@@ -20,7 +20,7 @@ class TipePeminjamanResource extends Resource
     protected static ?string $model = TipePeminjaman::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Manajemen Acara';
+    protected static ?string $navigationGroup = 'Manajemen Masjid';
     protected static ?string $navigationParentItem = 'Peminjaman Tempat';
     protected static ?string $navigationLabel = 'Tipe Peminjaman';
     protected static ?string $slug = 'tipe-peminjaman';

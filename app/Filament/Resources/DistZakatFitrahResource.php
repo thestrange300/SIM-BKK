@@ -28,12 +28,13 @@ class DistZakatFitrahResource extends Resource
 {
     protected static ?string $model = DistZakatFitrah::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Manajemen Acara Khusus';
+    protected static ?string $navigationIcon = 'heroicon-o-cube';
+    protected static ?string $navigationGroup = 'Manajemen Zakat';
     protected static ?string $navigationLabel = 'Distribusi Zakat Fitrah';
     protected static ?string $slug = 'dist-zakat-fitrah';
     protected static ?string $modelLabel = 'Distribusi Zakat Fitrah';
     protected static ?string $pluralModelLabel = 'Distribusi Zakat Fitrah';
+    protected static ?int $navigationSort = 2;
 
     public static function form(Form $form): Form
     {

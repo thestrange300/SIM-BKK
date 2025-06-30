@@ -50,10 +50,14 @@ class KeuanganResource extends Resource
             DatePicker::make('tanggal')
                 ->required()
                 ->default(Date::now()),
-            TextInput::make('deskripsi')->required(),
+            TextInput::make('deskripsi')
+            ->required()
+            ->maxLength(255)
+            ->placeholder('Masukkan deskripsi atau keterangan transaksi'),
             TextInput::make('jumlah')
                 ->numeric()
-                ->required(),
+                ->required()
+                ->placeholder('Masukkan jumlah uang'),
             Select::make('jenis')
                 ->options([
                     'pemasukan' => 'Pemasukan',

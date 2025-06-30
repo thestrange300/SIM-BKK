@@ -25,7 +25,7 @@ class KajianResource extends Resource
 {
     protected static ?string $model = Kajian::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-book-open';
     protected static ?string $navigationGroup = 'Manajemen Acara';
     protected static ?string $navigationLabel = 'Kajian dan Majelis Ilmu';
     protected static ?string $slug = 'kajian';
@@ -36,35 +36,42 @@ class KajianResource extends Resource
         return $form
             ->schema([
                 TextInput::make('tema')
-                    ->label('Tema Kajian')
+                    ->label('Judul Kajian')
                     ->required()
-                    ->maxLength(255),
-                DatePicker::make('tanggal')
-                    ->label('Tanggal Kajian')
-                    ->required(),
-                TimePicker::make('waktu_mulai')
-                    ->label('Waktu Mulai')
-                    ->required()
-                    ->hoursStep(1)
-                    ->minutesStep(1)
-                    ->seconds(false),
-                TimePicker::make('waktu_selesai')
-                    ->label('Waktu Selesai')
-                    ->nullable()
-                    ->hoursStep(1)
-                    ->minutesStep(1)
-                    ->seconds(false),
-                TextArea::make('catatan')
-                    ->label('Catatan')
-                    ->nullable()
-                    ->maxLength(500),
+                    ->maxLength(255)
+                    ->placeholder('Masukkan tema atau judul kajian')
+                    ->columnSpan(3),
                 Select::make('penceramah_id')
                     ->label('Penceramah')
                     ->relationship('penceramah', 'nama', fn ($query) => $query->penceramah())
                     ->required()
                     ->searchable()
-                    ->preload(),
-            ]);
+                    ->preload()                
+                    ->columnSpan(3),
+                DatePicker::make('tanggal')
+                    ->label('Tanggal Kajian')
+                    ->required()
+                    ->columnSpan(2),                    
+                TimePicker::make('waktu_mulai')
+                    ->label('Waktu Mulai')
+                    ->required()
+                    ->hoursStep(1)
+                    ->minutesStep(1)
+                    ->seconds(false)
+                    ->columnSpan(2),
+                TimePicker::make('waktu_selesai')
+                    ->label('Waktu Selesai')
+                    ->nullable()
+                    ->hoursStep(1)
+                    ->minutesStep(1)
+                    ->seconds(false)
+                    ->columnSpan(2),
+                TextArea::make('catatan')
+                    ->label('Catatan Kajian')
+                    ->nullable()
+                    ->maxLength(500)
+                    ->columnSpanFull(),
+            ])->columns(6);
     }
 
     public static function table(Table $table): Table

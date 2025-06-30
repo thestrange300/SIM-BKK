@@ -32,6 +32,11 @@ class TipePengeluaranResource extends Resource
         return $form
             ->schema([
                 TextInput::make('nama')->required(),
+                TextInput::make('deskripsi')
+                    ->label('Deskripsi')
+                    ->required()
+                    ->maxLength(500)
+                    ->placeholder('Masukkan deskripsi pengeluaran'),
             ]);
     }
 
@@ -40,6 +45,10 @@ class TipePengeluaranResource extends Resource
         return $table
             ->columns([
                 TextColumn::make('nama'),
+                TextColumn::make('deskripsi')
+                    ->label('Deskripsi')
+                    ->searchable()
+                    ->sortable(),
             ])
             ->filters([
                 //

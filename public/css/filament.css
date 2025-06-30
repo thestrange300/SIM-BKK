@@ -1,0 +1,4 @@
+/* Override the default gap for navigation groups */
+.fi-sidebar-nav-groups {
+    gap: 1.5rem !important; /* Set the desired gap and use !important to ensure override */
+}

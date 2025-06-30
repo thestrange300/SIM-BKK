@@ -23,6 +23,10 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             TipeZakatFitrahSeeder::class,
+            TipeDagingQurbanSeeder::class,
+            TipePemasukanSeeder::class,
+            TipePengeluaranSeeder::class,
+            TipePeminjamanSeeder::class, // add this line
         ]);
     }
 }

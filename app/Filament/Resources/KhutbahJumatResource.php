@@ -22,7 +22,7 @@ use App\Filament\Resources\KhutbahJumatResource\RelationManagers;
 class KhutbahJumatResource extends Resource
 {
     protected static ?string $model = KhutbahJumat::class;
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationIcon = 'heroicon-o-speaker-wave';
     protected static ?string $navigationGroup = 'Manajemen Acara';
     protected static ?string $navigationLabel = 'Khutbah Jumat';
     protected static ?string $slug = 'khutbah-jumat';
@@ -40,10 +40,6 @@ class KhutbahJumatResource extends Resource
                     ->maxLength(255)
                     ->label('Judul Khutbah')
                     ->nullable(),
-                Textarea::make('catatan')
-                    ->maxLength(65535)
-                    ->label('Catatan Khutbah')
-                    ->nullable(),
                 Select::make('imam_id')
                     ->label('Imam')
                     ->relationship('imam', 'nama', fn ($query) => $query->imam())
@@ -55,7 +51,12 @@ class KhutbahJumatResource extends Resource
                     ->relationship('khotib', 'nama', fn ($query) => $query->khotib())
                     ->required()
                     ->searchable()
-                    ->preload(),                    
+                    ->preload(),
+                Textarea::make('catatan')
+                    ->maxLength(65535)
+                    ->label('Catatan Khutbah')
+                    ->nullable()
+                    ->columnSpanFull(),                    
             ]);
     }
 

@@ -22,8 +22,8 @@ class PenZakatFitrahResource extends Resource
 {
     protected static ?string $model = PenZakatFitrah::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Manajemen Acara Khusus';
+    protected static ?string $navigationIcon = 'heroicon-o-arrow-down-on-square';
+    protected static ?string $navigationGroup = 'Manajemen Zakat';
     protected static ?string $navigationLabel = 'Penerimaan Zakat Fitrah';
     protected static ?string $slug = 'pen-zakat-fitrah';
     protected static ?string $modelLabel = 'Penerimaan Zakat Fitrah';
