@@ -73,13 +73,17 @@ class DataHewanResource extends Resource
                         ];
                         $jenisCode = $jenisMap[$jenis] ?? 'X';
 
-                        // Get last urutan for this year and jenis_hewan
-                        $count = \App\Models\DataHewan::whereYear('tanggal', date('Y'))
+                        // Ambil id_hewan terakhir untuk tahun & jenis ini
+                        $last = \App\Models\DataHewan::whereYear('tanggal', date('Y'))
                             ->where('jenis_hewan', $jenis)
-                            ->count() + 1;
+                            ->orderByDesc('id_hewan')
+                            ->first();
 
-                        $urutan = str_pad($count, 3, '0', STR_PAD_LEFT);
-                        // Set the id_hewan field
+                        if ($last && preg_match('/Q\d{2}-[A-Z]-(\d{3})/', $last->id_hewan, $matches)) {
+                            $urutan = str_pad(((int)$matches[1]) + 1, 3, '0', STR_PAD_LEFT);
+                        } else {
+                            $urutan = '001';
+                        }
                         $set('id_hewan', "Q{$year}-{$jenisCode}-{$urutan}");
                     }),
 

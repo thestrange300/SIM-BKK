@@ -27,6 +27,7 @@ class DatabaseSeeder extends Seeder
             TipePemasukanSeeder::class,
             TipePengeluaranSeeder::class,
             TipePeminjamanSeeder::class, // add this line
+            TipeInventarisSeeder::class,
         ]);
     }
 }
