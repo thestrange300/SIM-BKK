@@ -20,7 +20,7 @@ class TipeDagingQurbanResource extends Resource
     protected static ?string $model = TipeDagingQurban::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
-    protected static ?string $navigationGroup = 'Manajemen Kurban';
+    protected static ?string $navigationGroup = 'Manajemen Qurban';
     protected static ?string $navigationLabel = 'Tipe Daging Qurban';
     protected static ?string $navigationParentItem = 'Distribusi Daging Qurban';
     protected static ?string $slug = 'tipe-daging-qurban';

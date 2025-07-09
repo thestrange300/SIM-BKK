@@ -47,7 +47,7 @@ class TipePengeluaranSeeder extends Seeder
                 'deskripsi' => 'Distribusi zakat fitrah atau zakat mal kepada mustahik.'
             ],
             [
-                'nama' => 'Honor Marbot dan Petugas Kebersihan',
+                'nama' => 'Honor Petugas Masjid',
                 'deskripsi' => 'Pembayaran untuk penjaga masjid dan kebersihan.'
             ],
             [

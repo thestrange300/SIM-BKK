@@ -26,7 +26,7 @@ class DistDagingQurbanResource extends Resource
     protected static ?string $model = DistDagingQurban::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-cube';
-    protected static ?string $navigationGroup = 'Manajemen Kurban';
+    protected static ?string $navigationGroup = 'Manajemen Qurban';
     protected static ?string $navigationLabel = 'Distribusi Daging Qurban';
     protected static ?string $slug = 'dist-daging-qurban';
     protected static ?string $modelLabel = 'Distribusi Daging Qurban';

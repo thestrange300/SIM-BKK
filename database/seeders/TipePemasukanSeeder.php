@@ -23,10 +23,6 @@ class TipePemasukanSeeder extends Seeder
                 'deskripsi' => 'Donasi untuk program tertentu seperti renovasi, pembelian lahan, atau pembangunan fasilitas.'
             ],
             [
-                'nama' => 'Zakat Fitrah',
-                'deskripsi' => 'Pemasukan dari zakat fitrah umat pada bulan Ramadan.'
-            ],
-            [
                 'nama' => 'Zakat Mal',
                 'deskripsi' => 'Penerimaan dari zakat harta yang dipercayakan ke masjid untuk disalurkan.'
             ],

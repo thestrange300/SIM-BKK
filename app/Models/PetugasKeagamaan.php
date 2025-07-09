@@ -21,6 +21,11 @@ class PetugasKeagamaan extends Model
         'kategori' => 'array'
     ];
 
+    public function kajian()
+    {
+        return $this->hasMany(Kajian::class, 'penceramah_id');
+    }
+
     public function khutbahJumat()
     {
         return $this->hasMany(KhutbahJumat::class, 'khotib_id');

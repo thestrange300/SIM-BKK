@@ -22,7 +22,7 @@ class DataHewanResource extends Resource
     protected static ?string $model = DataHewan::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-clipboard-document-list';
-    protected static ?string $navigationGroup = 'Manajemen Kurban';
+    protected static ?string $navigationGroup = 'Manajemen Qurban';
     protected static ?string $navigationLabel = 'Data Hewan Qurban';
     protected static ?string $slug = 'data-hewan-qurban';
     protected static ?string $modelLabel = 'Data Hewan Qurban';

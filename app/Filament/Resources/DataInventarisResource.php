@@ -104,6 +104,7 @@ class DataInventarisResource extends Resource
                     ->label('Lokasi')
                     ->nullable()
                     ->maxLength(255)
+                    ->required()
                     ->placeholder('Masukkan lokasi barang'),
                 Select::make('kondisi')
                     ->label('Kondisi')
@@ -112,7 +113,8 @@ class DataInventarisResource extends Resource
                         'Rusak Ringan' => 'Rusak Ringan',
                         'Rusak Berat' => 'Rusak Berat',
                     ])
-                    ->placeholder('Pilih kondisi barang'),
+                    ->placeholder('Pilih kondisi barang')
+                    ->required(),
                 Textarea::make('keterangan')
                     ->label('Keterangan')
                     ->nullable()

@@ -2,10 +2,14 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Testing\Fluent\Concerns\Has;
 
 class DistDagingQurban extends Model
 {
+    use HasFactory;
+    
     public $table = 'dist_daging_qurban';
 
     protected $fillable = [

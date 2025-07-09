@@ -26,7 +26,7 @@ class DatabaseSeeder extends Seeder
             TipeDagingQurbanSeeder::class,
             TipePemasukanSeeder::class,
             TipePengeluaranSeeder::class,
-            TipePeminjamanSeeder::class, // add this line
+            TipePeminjamanSeeder::class,
             TipeInventarisSeeder::class,
         ]);
     }

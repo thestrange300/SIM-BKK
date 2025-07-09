@@ -88,7 +88,7 @@ class KeuanganResource extends Resource
     {
         return $table
             ->columns([
-                TextColumn::make('tanggal')->date('d M, Y'),
+                TextColumn::make('tanggal')->date('d M Y'),
                 TextColumn::make('jenis')
                     ->badge()
                     ->formatStateUsing(fn (string $state): string => match ($state) {
@@ -110,7 +110,8 @@ class KeuanganResource extends Resource
                             return TipePengeluaran::find($record->tipe_id)?->nama;
                         }
                     }),
-                TextColumn::make('deskripsi'),
+                TextColumn::make('deskripsi')
+                ->searchable(),
                 TextColumn::make('jumlah')->money('IDR'),
                 TextColumn::make('user.name')->label('Dinput Oleh'),
             ])

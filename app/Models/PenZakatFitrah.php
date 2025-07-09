@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class PenZakatFitrah extends Model
 {
+    use HasFactory;
+    
     protected $table = 'pen_zakat_fitrah';
 
     protected $fillable = [
@@ -16,6 +19,10 @@ class PenZakatFitrah extends Model
         'jumlah_makanan_pokok',
         'jumlah_uang',
         'keterangan',
+    ];
+
+    protected $casts = [
+        'tanggal_penerimaan' => 'date',
     ];
 
     public function tipeZakatFitrah()
