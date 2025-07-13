@@ -15,10 +15,6 @@ class TipePeminjamanSeeder extends Seeder
                 'deskripsi' => 'Peminjaman ruang untuk kegiatan pengajian mingguan atau bulanan.'
             ],
             [
-                'nama' => 'Kajian Umum',
-                'deskripsi' => 'Kegiatan kajian terbuka untuk umum yang biasanya menghadirkan ustadz atau narasumber khusus.'
-            ],
-            [
                 'nama' => 'Kegiatan Remaja Masjid',
                 'deskripsi' => 'Peminjaman oleh remaja masjid untuk rapat, pelatihan, atau acara internal.'
             ],

@@ -8,14 +8,17 @@ use App\Filament\Resources\PenZakatFitrahResource\Widgets\ZakatFitrahChartDoughn
 use App\Filament\Resources\PenZakatFitrahResource\Widgets\ZakatFitrahStats;
 use App\Filament\Resources\PenZakatFitrahResource\Widgets\ZakatFitrahStatsOverview;
 use App\Filament\Resources\PenZakatFitrahResource\Widgets\ZakatFitrahTable;
+use App\Filament\Traits\AuthorizesFilamentPages;
 use Filament\Pages\Page;
 
 class LaporanZakatFitrah extends Page
 {
+    use AuthorizesFilamentPages;
+
     protected static string $view = 'filament.pages.laporan-zakat-fitrah';
 
     protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
-    protected static ?string $navigationGroup = 'Laporan';
+    protected static ?string $navigationGroup = 'Manajemen Zakat';
     protected static ?string $navigationLabel = 'Laporan Zakat Fitrah';
     protected static ?string $modelLabel = 'Laporan Zakat Fitrah';
     protected static ?string $pluralModelLabel = 'Laporan Zakat Fitrah';

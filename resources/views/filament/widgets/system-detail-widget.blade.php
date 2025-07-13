@@ -12,7 +12,7 @@
             @foreach($details as $name => $version)
                 <div class="flex justify-between">
                     <span class="font-semibold text-sm">{{ $name }}</span>
-                    <span class="text-green-400 bg-emerald-900/50 border border-green-800 text-xs px-2 py-0.5 rounded-md">
+                    <span class="text-green-700 bg-green-100 border border-green-300 dark:text-green-400 dark:bg-emerald-900/50 dark:border-green-800 text-xs px-2 py-0.5 rounded-md">
                         {{ $version }}
                     </span>
                 </div>

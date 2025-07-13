@@ -7,11 +7,14 @@ use Dflydev\DotAccessData\Data;
 use App\Filament\Resources\DataHewanResource\Widgets\DataHewanChart;
 use App\Filament\Resources\DataHewanResource\Widgets\DataHewanChartLine;
 use App\Filament\Resources\DataHewanResource\Widgets\DataHewanStatsOverview;
+use App\Filament\Traits\AuthorizesFilamentPages;
 
 class LaporanQurban extends Page
 {
+    use AuthorizesFilamentPages;
+
     protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
-    protected static ?string $navigationGroup = 'Laporan';
+    protected static ?string $navigationGroup = 'Manajemen Qurban';
     protected static ?string $navigationLabel = 'Laporan Qurban';
     protected static ?string $modelLabel = 'Laporan Qurban';
     protected static ?string $pluralModelLabel = 'Laporan Qurban';

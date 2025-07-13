@@ -7,9 +7,12 @@ use App\Filament\Widgets\GitbookWidget;
 use App\Filament\Widgets\SystemDetailWidget;
 use Filament\Pages\Page;
 use Filament\Widgets\AccountWidget;
+use App\Filament\Traits\AuthorizesFilamentPages;
 
 class Dashboard extends Page
 {
+    use AuthorizesFilamentPages;
+
     protected static ?string $navigationIcon = 'heroicon-o-home';
 
     protected static string $view = 'filament.pages.dashboard';

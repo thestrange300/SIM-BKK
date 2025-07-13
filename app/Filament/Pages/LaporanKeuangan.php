@@ -8,11 +8,14 @@ use App\Filament\Resources\KeuanganResource\Widgets\KeuanganChartLine;
 use App\Filament\Resources\KeuanganResource\Widgets\KeuanganStatsOverview;
 use App\Filament\Resources\KeuanganResource\Widgets\KeuanganChartPiePemasukan;
 use App\Filament\Resources\KeuanganResource\Widgets\KeuanganChartPiePengeluaran;
+use App\Filament\Traits\AuthorizesFilamentPages;
 
 class LaporanKeuangan extends Page
 {
+    use AuthorizesFilamentPages;
+
     protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
-    protected static ?string $navigationGroup = 'Laporan';
+    protected static ?string $navigationGroup = 'Manajemen Keuangan';
     protected static ?string $navigationLabel = 'Laporan Keuangan';
     protected static ?string $modelLabel = 'Laporan Keuangan';
     protected static ?string $pluralModelLabel = 'Laporan Keuangan';

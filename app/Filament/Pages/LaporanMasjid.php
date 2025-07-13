@@ -15,11 +15,14 @@ use App\Filament\Resources\PetugasKeagamaanResource\Widgets\PetugasKeagamaanChar
 use App\Filament\Resources\PetugasKeagamaanResource\Widgets\PetugasKeagamaanChartTipe;
 use App\Filament\Resources\PeminjamanTempatResource\Widgets\PeminjamanTempatStatsOverview;
 use App\Filament\Resources\PetugasKeagamaanResource\Widgets\PetugasKeagamaanStatsOverview;
+use App\Filament\Traits\AuthorizesFilamentPages;
 
 class LaporanMasjid extends Page
 {
+    use AuthorizesFilamentPages;
+
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
-    protected static ?string $navigationGroup = 'Laporan';
+    protected static ?string $navigationGroup = 'Manajemen Masjid';
     protected static ?string $navigationLabel = 'Laporan Masjid';
     protected static ?string $modelLabel = 'Laporan Masjid';
     protected static ?string $pluralModelLabel = 'Laporan Masjid';

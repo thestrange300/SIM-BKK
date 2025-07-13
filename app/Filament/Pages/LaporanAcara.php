@@ -7,11 +7,14 @@ use Filament\Pages\Page;
 use App\Filament\Resources\KajianResource\Widgets\AcaraStatsOverview;
 use App\Filament\Resources\KajianResource\Widgets\AcaraTableTopAktif;
 use App\Filament\Resources\KajianResource\Widgets\AcaraTableKegiatanDatang;
+use App\Filament\Traits\AuthorizesFilamentPages;
 
 class LaporanAcara extends Page
 {
+    use AuthorizesFilamentPages;
+
     protected static ?string $navigationIcon = 'heroicon-o-document-chart-bar';
-    protected static ?string $navigationGroup = 'Laporan';
+    protected static ?string $navigationGroup = 'Manajemen Acara';
     protected static ?string $navigationLabel = 'Laporan Acara';
     protected static ?string $modelLabel = 'Laporan Acara';
     protected static ?string $pluralModelLabel = 'Laporan Acara';

@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'superadmin',
             'email' => 'admin@localhost',
             'password' => bcrypt('superadmin'),
+            'role' => 'superadmin',
         ]);
 
         $this->call([
