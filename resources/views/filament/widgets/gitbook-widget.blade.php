@@ -15,7 +15,7 @@
                     </p>
                 </div>
             </div>
-            <a href="https://your.gitbook.link.here" target="_blank"
+            <a href="https://sim-bkk.gitbook.io/sim-bkk/" target="_blank"
                class="inline-flex items-center text-center px-4 py-2 text-sm font-medium text-white bg-primary-700 rounded-md hover:bg-primary-800 dark:bg-primary-700 dark:hover:bg-primary-800 transition">
                 Buka GitBook
             </a>
