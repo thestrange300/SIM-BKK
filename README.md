@@ -79,6 +79,12 @@ The application should now be accessible at `http://127.0.0.1:8000`.
 
 After installation, you can access the application through your web browser. Log in using the credentials created during the seeding process (if you ran the seeder) or register a new user if allowed. Navigate through the Filament admin panel to manage different aspects of the mosque.
 
+## Documentation
+
+The official documentation for SIM-BKK is available on GitBook. It provides detailed information about the system's features, architecture, and usage.
+
+[**View Documentation**](https://sim-bkk.gitbook.io/sim-bkk/)
+
 ## License
 
 The SIM-BKK project is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
